@@ -29,6 +29,14 @@ class Maze:
     def height(self):
         return max(square.row for square in self) + 1
 
+    @cached_property
+    def entrance(self):
+        return next(sq for sq in self if sq.role is Role.ENTRANCE)
+
+    @cached_property
+    def exit(self):
+        return next(sq for sq in self if sq.role is Role.EXIT)
+
 def validate_indices(maze: Maze) -> None:
     assert [square.index for square in maze] == list(
         range(len(maze.squares))
