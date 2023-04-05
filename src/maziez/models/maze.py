@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from functools import cached_property
 from typing import Iterator
+
 from maziez.models.square import Square
 from maziez.models.role import Role
 

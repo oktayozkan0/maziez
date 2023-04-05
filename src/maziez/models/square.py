@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 from maziez.models.border import Border
 from maziez.models.role import Role
 
