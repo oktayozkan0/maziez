@@ -1,14 +1,26 @@
 from dataclasses import dataclass
 from functools import cached_property
+from pathlib import Path
 from typing import Iterator
 
 from maziez.models.square import Square
 from maziez.models.role import Role
+from maziez.persistence.serializer import (
+    dump_squares,
+    load_squares,
+)
 
 
 @dataclass(frozen=True)
 class Maze:
     squares: tuple[Square, ...]
+
+    @classmethod
+    def load(cls, path: Path) -> "Maze":
+        return Maze(tuple(load_squares(path)))
+
+    def dump(self, path: Path) -> None:
+        dump_squares(self.width, self.height, self.squares, path)
 
     def __post_init__(self) -> None:
         validate_indices(self)

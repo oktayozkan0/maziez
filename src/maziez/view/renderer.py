@@ -30,7 +30,7 @@ class SVG:
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>SVG Preview</title>
+          <title>Maze Solve</title>
         </head>
         <body>
         {0}

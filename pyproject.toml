@@ -5,3 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "maziez"
 version = "1.0.0"
+
+dependencies = [
+    "networkx >= 3.0",
+]
+
+[project.scripts]
+solve = "maziez.__main__:main"
